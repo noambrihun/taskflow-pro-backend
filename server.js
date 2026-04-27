@@ -1,7 +1,8 @@
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
-
+require("dotenv").config();
+const app = express();
 
 app.use(cors());
 app.use(express.json());
@@ -12,7 +13,7 @@ mongoose
 .catch((err) => console.log(err));
 
 app.get("/", (req, res) => {
-  res.send("Employee Manager API Running");
+  res.send("Task-Flow API Running");
 });
 
 const PORT = process.env.PORT || 3000;
