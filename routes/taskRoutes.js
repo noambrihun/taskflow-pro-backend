@@ -4,7 +4,7 @@ const { models } = require("mongoose");
 const Task = require("../models/Task")
 
 
-router.post("/tasks", async (req, res) => {
+router.post("/", async (req, res) => {
   try {
     const newTask = await Task.create(req.body);
     res.status(201).json(newTask);
@@ -13,7 +13,7 @@ router.post("/tasks", async (req, res) => {
   }
 });
 
-router.get("/tasks", async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     const tasks = await Task.find();
     res.json(tasks);
